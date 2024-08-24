@@ -1,8 +1,6 @@
 > ## 📝&nbsp;&nbsp;관련 문서 레퍼런스
 
-    - [Notion-Ticket] : 
-    - [Notion-API] : 
-    - [Reference-Document] : 
+    -
 
 > ## 💻&nbsp;&nbsp;어떤 것을 작업하셨나요?
 
