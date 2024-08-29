@@ -7,28 +7,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Comment {
+public class Like {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "comment_id")
+    @Column(name = "like_id")
     private Long id;
-
-    private String content;
-
-    private String status;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "post_id")
-    @Column(name = "post_id")
-    private Long post;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "user_id")
@@ -36,10 +24,7 @@ public class Comment {
     private Long user;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "parent_id")
-    @Column(name = "parent_id")
-    private Long parent;
-
-    @OneToMany(mappedBy = "parent")
-    private List<Comment> childList = new ArrayList<>();
+//    @JoinColumn(name = "post_id")
+    @Column(name = "post_id")
+    private Long post;
 }

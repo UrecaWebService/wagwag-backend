@@ -39,4 +39,7 @@ public class Post {
 
     @OneToMany(mappedBy ="post", cascade = CascadeType.ALL)
     List<Comment> commentList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    List<PostCategory> postCategoryList = new ArrayList<>();
 }

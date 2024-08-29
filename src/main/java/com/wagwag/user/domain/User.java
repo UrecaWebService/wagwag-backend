@@ -1,6 +1,7 @@
 package com.wagwag.user.domain;
 
 import com.wagwag.post.domain.Comment;
+import com.wagwag.post.domain.Like;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.ArrayList;
@@ -23,4 +24,7 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Comment> commentList = new ArrayList<>();
+
+    @OneToMany(mappedBy= "user", cascade= CascadeType.ALL)
+    private List<Like> likeList = new ArrayList<>();
 }
