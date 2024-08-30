@@ -1,5 +1,8 @@
 package com.wagwag.post.domain;
 
+import com.wagwag.global.entity.BaseTimeEntity;
+import com.wagwag.post.domain.Enum.PostStatus;
+import com.wagwag.relation.domain.PostCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +16,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post {
+public class Post extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "post_id")
@@ -34,12 +37,12 @@ public class Post {
     @Column
     private Long shareCnt;
 
-    @Column
-    private Long status;
+    @Enumerated(EnumType.STRING)
+    private PostStatus status;
 
-    @OneToMany(mappedBy ="post", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy ="postId", cascade = CascadeType.ALL)
     List<Comment> commentList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "postId", cascade = CascadeType.ALL)
     List<PostCategory> postCategoryList = new ArrayList<>();
 }

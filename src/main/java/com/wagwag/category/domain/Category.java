@@ -1,5 +1,7 @@
-package com.wagwag.post.domain;
+package com.wagwag.category.domain;
 
+import com.wagwag.relation.domain.PostCategory;
+import com.wagwag.relation.domain.UserCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,6 +23,9 @@ public class Category {
 
     private String categoryName;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categoryId", cascade = CascadeType.ALL)
     private List<PostCategory> postCategoryList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "categoryId", cascade = CascadeType.ALL)
+    private List<UserCategory> userCategoryList = new ArrayList<>();
 }

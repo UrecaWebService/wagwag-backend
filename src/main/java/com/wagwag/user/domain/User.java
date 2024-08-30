@@ -1,7 +1,10 @@
 package com.wagwag.user.domain;
 
+import com.wagwag.global.entity.BaseTimeEntity;
 import com.wagwag.post.domain.Comment;
-import com.wagwag.post.domain.Like;
+import com.wagwag.relation.domain.PostLike;
+import com.wagwag.relation.domain.UserCategory;
+import com.wagwag.user.domain.Enum.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.ArrayList;
@@ -12,7 +15,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -22,9 +25,15 @@ public class User {
 
     private int age;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
+
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
     private List<Comment> commentList = new ArrayList<>();
 
-    @OneToMany(mappedBy= "user", cascade= CascadeType.ALL)
-    private List<Like> likeList = new ArrayList<>();
+    @OneToMany(mappedBy= "userId", cascade= CascadeType.ALL)
+    private List<PostLike> likeList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+    private List<UserCategory> userCategoryList = new ArrayList<>();
 }
