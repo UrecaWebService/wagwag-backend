@@ -36,6 +36,9 @@ out/
 ### VS Code ###
 .vscode/
 
-### Custom ###
+### Secret Config ###
 application.yml
-docker.yml
+.env
+
+### docker volunm ###
+mysql_data/
