@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class ErrorResponse extends ApiResponse{
+public class ErrorResponse extends ApiResponse {
 
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private final List<ValidationError> errors = new ArrayList<>();
