@@ -20,15 +20,15 @@ public class ErrorResponse extends ApiResponse {
         super(false, errorCode.getCode(), errorCode.getMessage());
     }
 
-    public static ErrorResponse of(ErrorCode errorCode){
+    public static ErrorResponse of(ErrorCode errorCode) {
         return new ErrorResponse(errorCode);
     }
 
-    private ErrorResponse(ErrorCode errorCode, String message){
+    private ErrorResponse(ErrorCode errorCode, String message) {
         super(false, errorCode.getCode(), message);
     }
 
-    public static ErrorResponse of(ErrorCode errorCode, String message){
+    public static ErrorResponse of(ErrorCode errorCode, String message) {
         return new ErrorResponse(errorCode, message);
     }
 
