@@ -4,7 +4,7 @@ import com.wagwag.global.entity.BaseTimeEntity;
 import com.wagwag.post.domain.Comment;
 import com.wagwag.relation.domain.PostLike;
 import com.wagwag.relation.domain.UserCategory;
-import com.wagwag.user.domain.Enum.UserStatus;
+import com.wagwag.user.domain.enums.*;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.ArrayList;

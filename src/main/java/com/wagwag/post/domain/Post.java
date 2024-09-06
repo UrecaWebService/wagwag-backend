@@ -1,7 +1,7 @@
 package com.wagwag.post.domain;
 
 import com.wagwag.global.entity.BaseTimeEntity;
-import com.wagwag.post.domain.Enum.PostStatus;
+import com.wagwag.post.domain.enums.*;
 import com.wagwag.relation.domain.PostCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
