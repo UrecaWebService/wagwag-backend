@@ -1,4 +1,4 @@
-package com.wagwag.user.domain.Enum;
+package com.wagwag.user.domain.enums;
 
 public enum UserStatus {
     ACTIVE, NONACTIVE

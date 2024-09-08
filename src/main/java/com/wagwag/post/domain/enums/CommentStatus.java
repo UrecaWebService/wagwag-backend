@@ -1,4 +1,4 @@
-package com.wagwag.post.domain.Enum;
+package com.wagwag.post.domain.enums;
 
 public enum CommentStatus {
     ACTIVE, NONACTIVE
