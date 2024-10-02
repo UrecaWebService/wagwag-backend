@@ -1,5 +1,14 @@
 package com.wagwag.user.domain.enums;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@RequiredArgsConstructor
 public enum UserRole {
-    ROLE_USER, ROLE_ADMIN
+
+    GUEST("ROLE_ADMIN"), USER("ROLE_USER");
+
+    private final String key;
+
 }

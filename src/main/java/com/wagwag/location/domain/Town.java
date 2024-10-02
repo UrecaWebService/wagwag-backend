@@ -20,10 +20,5 @@ public class Town{
 
     private String name;
 
-//    @ManyToOne
-//    @JoinColumn(name = "district_code")
-    @Column(name = "district_code")
-    private Long districtCode;
-
 
 }

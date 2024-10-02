@@ -21,6 +21,4 @@ public class City {
 
     private String name;
 
-    @OneToMany(mappedBy = "cityCode",cascade = CascadeType.ALL)
-    private List<District> districtList = new ArrayList<>();
 }

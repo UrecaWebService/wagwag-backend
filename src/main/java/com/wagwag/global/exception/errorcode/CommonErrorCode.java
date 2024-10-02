@@ -20,7 +20,17 @@ public enum CommonErrorCode implements ErrorCode {
     JWT_REFRESHTOKEN_NOT_MATCH(HttpStatus.CONFLICT,"4104","RefreshToken이 일치하지 않습니다."),
     REFRESH_TOKEN_NOT_FOUND(HttpStatus.NOT_FOUND, "4105", "리프레시 토큰을 찾을 수 없습니다."),
     JWT_AUTHORIZATION_FAILED(HttpStatus.UNAUTHORIZED,"4106","권한이 없습니다."),
+
+
+    //user error (4001~
+    USER_NOT_FOUND(HttpStatus.NOT_FOUND,"4001","해당 유저를 찾을 수 없습니다."),
+
+    LOGOUT_MEMBER(HttpStatus.FORBIDDEN, "3001", "로그아웃된 사용자입니다.(재 로그인 하세요."),
+
     ;
+
+
+
 
     private final HttpStatus httpStatus;
     private final String code;

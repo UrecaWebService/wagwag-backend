@@ -1,6 +1,7 @@
 package com.wagwag.post.domain;
 
 import com.wagwag.global.entity.BaseTimeEntity;
+import com.wagwag.location.domain.Town;
 import com.wagwag.post.domain.enums.*;
 import com.wagwag.relation.domain.PostCategory;
 import jakarta.persistence.*;
@@ -36,6 +37,13 @@ public class Post extends BaseTimeEntity{
 
     @Column
     private Long shareCnt;
+
+    @OneToOne
+    @JoinColumn(name = "town_code")
+    private Town townCode;
+
+    @Column(name = "user_id")
+    private Long userId;
 
     @Enumerated(EnumType.STRING)
     private PostStatus status;
