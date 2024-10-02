@@ -22,12 +22,5 @@ public class District {
 
     private String name;
 
-//    @ManyToOne
-//    @JoinColumn(name = "city_code")
-    @Column(name ="city_code")
-    private Long cityCode;
-
-    @OneToMany(mappedBy = "districtCode",cascade = CascadeType.ALL)
-    private List<Town> townList = new ArrayList<>();
 
 }
